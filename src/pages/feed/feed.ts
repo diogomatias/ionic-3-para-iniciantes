@@ -20,6 +20,8 @@ export class FeedPage {
     time_comment: "11h ago"
   };
 
+  public lista_filmes = new Array<any>();
+
   public nome_usuario: string = "Diogo Matias";
 
   constructor(
@@ -37,7 +39,9 @@ export class FeedPage {
     this.movieProvider.getLatesMovies().subscribe(
       data => {
         const response = (data as any);
-        console.log(response);
+        const objeto_retorno = JSON.parse(response._body);
+        this.lista_filmes = objeto_retorno.results;
+        console.log(objeto_retorno);
       }, error => {
         console.log(error);
       }
