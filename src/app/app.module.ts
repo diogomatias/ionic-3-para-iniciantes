@@ -10,10 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FeedPageModule } from '../pages/feed/feed.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MoovieProvider } from '../providers/moovie/moovie';
+import { FeedPage } from '../pages/feed/feed';
 
 @NgModule({
     declarations: [
@@ -21,12 +21,12 @@ import { MoovieProvider } from '../providers/moovie/moovie';
         AboutPage,
         ContactPage,
         HomePage,
-        TabsPage
+        TabsPage,
+        FeedPage
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
-        FeedPageModule,
         IntroPageModule,
         HttpClientModule
     ],
@@ -36,7 +36,8 @@ import { MoovieProvider } from '../providers/moovie/moovie';
         AboutPage,
         ContactPage,
         HomePage,
-        TabsPage
+        TabsPage,
+        FeedPage
     ],
     providers: [
         StatusBar,
