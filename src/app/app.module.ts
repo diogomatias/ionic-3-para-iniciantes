@@ -42,8 +42,7 @@ import { FeedPage } from '../pages/feed/feed';
     providers: [
         StatusBar,
         SplashScreen,
-        { provide: ErrorHandler, useClass: IonicErrorHandler },
-        MoovieProvider
+        { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })
 export class AppModule { }
