@@ -38,10 +38,9 @@ export class FeedPage {
   ionViewDidLoad() {
     this.movieProvider.getLatesMovies().subscribe(
       data => {
-        const response = (data as any);
-        const objeto_retorno = JSON.parse(response._body);
-        this.lista_filmes = objeto_retorno.results;
-        console.log(objeto_retorno);
+        const response = (data as any);        
+        this.lista_filmes = response.results;
+        console.log(response.results);
       }, error => {
         console.log(error);
       }
