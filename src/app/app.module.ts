@@ -13,6 +13,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedPageModule } from '../pages/feed/feed.module';
+import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.module';
+import { SobrePageModule } from '../pages/sobre/sobre.module';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +30,10 @@ import { FeedPageModule } from '../pages/feed/feed.module';
         IonicModule.forRoot(MyApp),
         IntroPageModule,
         HttpClientModule,
-        FeedPageModule
+        FeedPageModule,
+        ConfiguracoesPageModule,
+        SobrePageModule,
+        PerfilPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
