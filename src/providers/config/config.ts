@@ -15,7 +15,7 @@ export class ConfigProvider {
 
   //Recuperar os dados do local storage
   getConfigData(): any {
-    return localStorage.getItem(config_key_name) || {};
+    return localStorage.getItem(config_key_name);
   }
 
   //Gravar os dados no local storage
