@@ -17,6 +17,8 @@ import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.mo
 import { SobrePageModule } from '../pages/sobre/sobre.module';
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalhes.module';
+import { CartolaProvider } from '../providers/cartola/cartola';
+import { AtletasPageModule } from '../pages/atletas/atletas.module';
 
 @NgModule({
     declarations: [
@@ -35,7 +37,8 @@ import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalh
         ConfiguracoesPageModule,
         SobrePageModule,
         PerfilPageModule,
-        FilmesDetalhesPageModule
+        FilmesDetalhesPageModule,
+        AtletasPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -48,7 +51,8 @@ import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalh
     providers: [
         StatusBar,
         SplashScreen,
-        { provide: ErrorHandler, useClass: IonicErrorHandler }
+        { provide: ErrorHandler, useClass: IonicErrorHandler },
+    CartolaProvider
     ]
 })
 export class AppModule { }
