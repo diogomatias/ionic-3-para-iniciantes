@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { MoovieProvider } from '../../providers/moovie/moovie';
+import { FilmesDetalhesPage } from '../filmes-detalhes/filmes-detalhes';
 
 @IonicPage()
 @Component({
@@ -55,13 +56,17 @@ export class FeedPage {
     alert(num1 + num2);
   }
 
+  abrirDetalhes(filme) {
+    this.navCtrl.push(FilmesDetalhesPage, { id: filme.id });
+  }
+
   ionViewDidEnter() {
     this.carregarFilmes();
   }
 
   carregarFilmes() {
     this.abreCarregando();
-    this.movieProvider.getLatesMovies().subscribe(
+    this.movieProvider.getLatestMovies().subscribe(
       data => {
         const response = (data as any);
         this.lista_filmes = response.results;

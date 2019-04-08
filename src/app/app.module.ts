@@ -16,6 +16,7 @@ import { FeedPageModule } from '../pages/feed/feed.module';
 import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.module';
 import { SobrePageModule } from '../pages/sobre/sobre.module';
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
+import { FilmesDetalhesPageModule } from '../pages/filmes-detalhes/filmes-detalhes.module';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { PerfilPageModule } from '../pages/perfil/perfil.module';
         FeedPageModule,
         ConfiguracoesPageModule,
         SobrePageModule,
-        PerfilPageModule
+        PerfilPageModule,
+        FilmesDetalhesPageModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
