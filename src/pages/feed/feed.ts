@@ -22,10 +22,12 @@ export class FeedPage {
   };
 
   public lista_filmes = new Array<any>();
+  public page = 1;
   public nome_usuario: string = "Diogo Matias";
   public loader;
   public refresher;
   public isRefreshing: boolean = false;
+  public infiniteScroll;
 
   constructor(
     public navCtrl: NavController,
@@ -60,17 +62,29 @@ export class FeedPage {
     this.navCtrl.push(FilmesDetalhesPage, { id: filme.id });
   }
 
+  doInfinite(infiniteScroll) {
+    this.page++;
+    this.infiniteScroll = infiniteScroll;
+    this.carregarFilmes(true);
+  }
+
   ionViewDidEnter() {
     this.carregarFilmes();
   }
 
-  carregarFilmes() {
+  carregarFilmes(newPage: boolean = false) {
     this.abreCarregando();
-    this.movieProvider.getLatestMovies().subscribe(
+    this.movieProvider.getLatestMovies(this.page).subscribe(
       data => {
         const response = (data as any);
-        this.lista_filmes = response.results;
-        console.log(response.results);
+        
+        if (newPage) {
+          this.lista_filmes = this.lista_filmes.concat(response.results);
+          this.infiniteScroll.complete();
+        } else {
+          this.lista_filmes = response.results;
+        }
+
         this.fechaCarregando();
         if (this.isRefreshing) {
           this.refresher.complete();
